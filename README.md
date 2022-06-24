@@ -101,7 +101,7 @@ void main(void) {
       $nano ~/.zshrc
          > ZSH_THEME="agnoster"
          > ZSH_THEME="amuse" 
-         많은 테마 아래의 폴더에 있음
+         아래의 폴더에 많은 테마가 있음
          $cd ~/.oh-my-zsh/themes
    
    printf(" ★ 이제 터미널에서 MAC iTerm2와 같은 비쥬얼로 JMT 프로그래밍을 할 수 있따.\n");
