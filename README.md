@@ -107,8 +107,3 @@ void main(void) {
    printf(" ★ 이제 터미널에서 MAC iTerm2와 같은 비쥬얼로 JMT 프로그래밍을 할 수 있따.\n");
 }
 ```
-
-```
-FETCH
-이제 요 부분을 지워볼까나 ..
-```
