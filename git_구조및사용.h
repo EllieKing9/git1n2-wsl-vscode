@@ -111,6 +111,7 @@ $git stash --include-untracked : "untracked" 내용도 stash 한다.
 $git stash branch [name] : stash 할 당시의 커밋을 Checkout 한 후 새로운 [name] 브랜치를 만들고 여기에 적용하고 stash를 삭제한다.
 
 $git chery-pick [커밋ID_앞4자리] :
+	> 
 
 $touch .gitignore
 $echo "*.log" > .gitignore
