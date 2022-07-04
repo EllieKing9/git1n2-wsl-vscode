@@ -46,5 +46,5 @@ __ git 단축어 확인
 $git config --global --list
 $git config --local --list
 
-$git config --global -e
+$git config --global -e //편집기로 파일 열림
 $git config --local -e
