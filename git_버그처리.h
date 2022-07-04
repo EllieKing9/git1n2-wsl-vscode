@@ -6,6 +6,7 @@ $git reflog : HEAD가 변경된 이력(내용, 커밋ID, ..)를 보여준다.
 //remote에서 받아서 한번 이라도 들여다 봤다면 여기에 남아있다.(즉 복원 가능, 이력 삭제 불가능)
 
 $git rebase
+	> 
 
 $git diff [커밋ID_앞4자리] [커밋ID_앞4자리]
 $git diff [커밋ID_앞4자리] [커밋ID_앞4자리] [file]
