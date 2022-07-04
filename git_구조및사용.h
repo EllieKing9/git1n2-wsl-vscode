@@ -1,7 +1,7 @@
 
 __ git 구조
 => untrack | tracked(unmodified | modified) | staged(index, cached) | local repository | ... | remote repository
-=>			working directory 				| 		staging area	|	repository	
+=> 		working directory 	    | 	  staging area 	    |		repository	
 	> add [file] : "staged" 상태로
 	> commit : "staged"의 현 상태를 "local repository"에 하나의 버젼으로 남기고 "unmodified" 상태로
 	> rm -cached [file]: "staging area" 에서 [file] 제거 및 [file]를 "untrack" 상태로 변경, "modified"에 같은 이름의 파일이 있으면 충돌 에러
