@@ -1,0 +1,194 @@
+																						
+		windows : cmder		mac : iTerm2		`--------------------------------------------------------------------------------->								터미널 세팅으로 빠졌다								
+														MAC iTerm2와 같은 비쥬얼 테마 설치가 목적								
+확인		git --version																				
+확인		git config --list												윈도우 microsoft store에서 [Windows New terminal] 설치 중								
+														Ubuntu 설치								
+설정		vs code	command palette		>code	???								Ubuntu 터미널 사용이 목적								
+추가		git config --global core.editor "code --wait"					or	git config --global core.editor "code"						관리자권한으로 PowerShell 실행 후								
+실행		git config --global -e												Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux								권한때문에 사용불가
+														오호 [프로그램 및 기능] > [Windows 기능 켜기/끄기]에서 Linux용 Windows 하위 시스템 설정 가능								
+추가		git config --global user.name "EllieKing"												오호 된다 ㅋㅋㅋㅋ								
+추가		git config --global user.email "7baetae@hanmail.net"																				
+추가		git config --global core.autocrlf "true"					windows : true ( <- /r/n | -> /n )				mac : input			UNIX username		untu	root9					
+																						
+														zsh 설치	sudo apt-get update							
+		<--------------------------------------------------------------------------------------------------------------------------													sudo apt-get install zsh							
+		이제 remote repository에 소스를 push 해보자											|	oh-my-zsh 설치								
+													|		"sh -c ""$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)""
+"							
+		그전에 windows git 버전과 ubuntu git 버전이 다르다.											| ___	테마변경								
+		ubuntu 에서 git 버전을 업데이트해야 겠다													code ~/.zshrc							
+		어차피 이 터미널(WSL로 세팅한 Ubuntu 터미널에서 zsh를 사용 할 것이기 때문에													ZSH_THEME="agnoster"							
+																			쉘(shell) 변경			
+		sudo vim /etc/resolve.conf 에 DNS항목을 확인하고 추가해준다.					나중에 git remote repositoy 접속 대비												chsh -s /bin/bash		??	
+		sudo apt-get update												Meslo 폰트(클릭)		다운로드 후 설치			https://github.com/powerline/fonts/tree/master/Meslo%20Slashed			
+		sudo apt-get upgrade												Windows New terminal 실행 > 설정 > Json 파일 열기								
+		시간이 좀 걸린다												"defaultProfile": 값 변경 ubuntu가 기본으로								
+														그리고 우분투 세팅에서								
+		sudo apt install git-all												"fontFace": "Meslo LG S for Powerline" 추가								
+		도중에 터미널을 껐더니 ㅠㅠ																				
+		sudo dpkg --configure -a												VS code 에서 font 설정								
+		을 해도 dpkg: error: parsing file .. newline in field name '#padding' 에러가 계속나온다												terminal font family		로 검색하여						
+														Meslo LG S for Powerline' 추가			SourceCodePro+Powerline+Awesome+Regular' font 추가					
+														SourceCodePro+Powerline+Awesome+Regular', 'Meslo LG S for Powerline'								
+		sudo rm -rf /var/lib/dpkg/updates/*			그래서 디렉토리 삭제 하고																	
+		sudo dpkg --configure -a												테마변경	ZSH_THEME="amuse"							
+															.oh-my-zsh/themes 에 겁나 많음							
+		sudo apt-get update													p10k configure							
+		sudo apt-get upgrade		전체 업그레이드 다시 시도											ZSH_THEME="powerlevel10k/powerlevel10k"				적용됨			
+																						
+		ubuntu 재설치!!																				
+																						
+		-------------------------------------				Set up																
+	설정파일위치		1. /home/untu/.gitconfig (--global)				2. git init 폴더내 .git/config (--local 기본옵션)															
+								명령어	옵션													
+	설정	git config --global user.name "Ellieking"					git	config	"--global"		git config user.name "ElliekingBonsa"											
+	설정	git config --global user.email "stbae@canon-bs.co.kr"									git config --global user.email "stbae@canon-bs.co.kr"											
+	설정	git config --global core.autocrlf true																				
+	추가	git config --global core.editor "code --wait"				or	git config --global core.editor "code"															
+	확인	git config --list																				
+	확인	git config --global -e																				
+	참고	git config --h																				
+		mkdir git-init																				
+		cd git-init																				
+	초기화	git init		rm -rf .git	삭제																	
+	상태	git status																				
+	단축어	git config --global alias.st status																				
+	상태	git s																				
+		-------------------------------------				Basic																
+								add	staging area													
+		echo hello world! > a.txt						commit	.git local directory													
+		echo hello world! > b.txt						checkout														
+		echo hello world! > c.txt						push	.git remote directory													
+		git status						pull														
+		git add a.txt																				
+		git status																				
+		git add b.txt c.txt		git add *.txt																		
+		echo ellie >> a.txt																				
+		git status																				
+		git add a.txt																				
+		git rm -cached *.txt		staging area 애서 working directory(tracked modified)로																		
+				modified 파일이 있으면 충돌 에러																		
+																						
+		rm a.txt																				
+		git add *	working directory에서 삭제된 파일은 staged area에서 그대로 둠																			
+		git add .	working directory에서 삭제된 파일은 staged area에서도 삭제해 버림																			
+																						
+		echo '*.log' > .gitignore																				
+		 																				
+																						
+																						
+																						
+																						
+																						
+		git add *																				
+		ehco hello >> c.txt																				
+		git status -s																				
+		git diff		working directory																		
+		git diff --staged		staging area																		
+		git diff --cached																				
+																						
+		git config --global diff.tool vscode							[diff]													
+		git config --global difftool.cmd 'code --wait --diff $LOCAL $REMOTE'							        tool = vscode					회사에서는 인증서 사용이 안되어서 사용 못함								
+									[difftool "vscode"]													
+		git commit							        cmd = code --wait --diff $LOCAL $REMOTE					에디터 연결을 다른걸로 해봐야 겠다. vi나 vim은 불편하다(안 쓴지 오래되서 이제 낯설다)								
+			./git/COMMIT_EDITMSG		Title	Descripsion								일단								
+		echo second >> c.txt												code name.file 하면 vs code로 에디트가 가능하다.								
+		git add c.txt							commit history example					그러나 우분투(리눅스)의 모든 파일에 접근이 가능한 것은 아니다.								
+		git commit -m "second commit"								init				vs code wsl-remote 익스텐션을 설치하면 접근이 가능하다								
+		echo third >> c.txt								add												
+		git commit -am "third"			a: all	m: message				fix crashing on 000 module												
+		git log																				
+																						
+																						
+		remote 세팅을 해보자																				
+		git remote add origin https://lmakers@bitbucket.org/lmakers/init3.git																				
+		git remote add origin https://...																				
+		SSL certificate problem: unable to get local issuer certificate 에러와 함께 접속이 안됨																				
+		회사 SSL인증서... 																				
+																						
+		일단 터미널에서 																				
+		git config --global http.sslVerify false																				
+		git config --list		나	git config --global -e		로 확인															
+		접속이 된다.																				
+																						
+		SourceTree 에서서도 ssl인증서 옵션이 있다.																				
+		VS Code는 없는듯 하다																				
+																						
+		일단 SSL 인증서를 새로 받아보자				Stop																
+																						
+		----------------------------------------																				
+																						
+		git local repository를 만들고 remote 											vs code + git 다시보고									
+		그전에											git remote									
+													git clone 사용법 확인									
+		git 를 깔고											github 아이디 만들어서 저장소 만들기									
+		기본적인 config 세팅을 해야함											git push									
+		먼저 이름과 이메일																				
+			git config --global user.name "nickname"					global vs. local 차이점은???														
+				git config user.name "ElliekingBonsa"					1. /home/untu/.gitconfig (--global)													
+			git config --global user.email "mail"						2. git init 폴더내 .git/config (--local 기본옵션)													
+				git config --global user.email "stbae@canon-bs.co.kr"																		
+		자 다음은																				
+		윈도우즈와 리눅스, 맥 OS 환경과의 연동을 위한 개행문자 옵션을 true로 해준다(윈도우즈에서 사용시)											??									
+			git config --global core.autocrlf true										vscode://vscode.github-authentication/did-authenticate?windowid=1&code=939cab14c2e6b9a03f94&state=fcb3560b-78f0-4580-904e-501f75cba854									
+		그리고																				
+		git 에서 사용할 에디터(편집기)를 정해준다.																				
+			git config --global core.editor "code --wait"																			
+			git config --global -e																			
+																						
+		이제 원하는 폴더를 만들거나 폴더로 이동하여																				
+			cd /mnt/c/		mkdir jects-git		cd jects-git		mkdir git-command-test			cd git-command-test										
+					rmdir jects-git																	
+		git init를 해주면																				
+			git init																			
+		.git 이라는 숨겨진 폴더가 생성되며 local git repository가 생성된다																				
+																						
+		차분점 확인 툴을 [VS Code] 로 설정																				
+			git config --global diff.tool vscode							[diff]												
+			git config --global difftool.cmd 'code --wait --diff $LOCAL $REMOTE'							        tool = vscode												
+										[difftool "vscode"]												
+										        cmd = code --wait --diff $LOCAL $REMOTE												
+		단축어 등록																				
+			git config --global alias.s status			git config --global alias.ss "status -s"										code config(local 옵션)						
+			git s			git ss										error	>	sudo apt-get install ca-certificates				
+			git config --global alias.d difftool																			
+			git d																			
+			git config --global alias.l log				git --no-paper		git --no-pager log			git config --global core.pager cat										
+			git l				git -P		git -P l													
+			git config --global alias.i init																			
+			git i																			
+			git config --global alias.lo "log --pretty=oneline"					git config --global alias.lg "log --pretty=oneline --graph"														
+			git lo					git lg														
+			git config --global alias.b branch																			
+			git b																			
+			git config --global alias.c checkout																			
+			git k																			
+			git config --global alias.c commit				git config --global alias.cm "commit -m"															
+			git c				git cm															
+			git config --global alias.m merge																			
+			git m																			
+			git config --global alias.a add																			
+			git a																			
+																						
+			untrack 상태			unmodified 상태				modified 상태				staged 상태								
+			Untracked files:						Changes not staged for commit:				Changes to be committed:									
+		git	add	"staged" 상태로					add	"staged" 상태로												
+		git											commit		"unmodified" 상태로							
+		git							modified 파일이 있으면 충돌 에러				rm -cached		"modified" 상태로							
+																						
+			처음 저장소를 Clone 하면 모든 파일은 Tracked이면서 Unmodified 상태이다																			
+										s												
+		git에서 관리하지 않는 정책만들기																				
+			touch .gitignore																			
+			echo "*~" > .gitignore																			
+																						
+		커밋하기																				
+			git commit -m																			
+			git commit -a																			
+			git commit -am																			
+																						
+																						
+																						
+						  																
