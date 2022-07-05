@@ -1,0 +1,188 @@
+																											
+	버전관리	Version Control																									
+		지난 과정 확인 가능																									
+		이전 버전으로 돌아갈 수 있음																									
+	동시협업	Cooperation																									
+	다른 컴퓨터에 작업물 보내기																										
+		백업본		서비스 제공		GitHub																					
+				(원격저장소)																							
+	텍스트 표시만으로 약속된 시각적 효과를 줄 수 있게 해주는 문법을 마크다운(markdown) 문법이라고 한다																										
+																											
+	커밋		commit		프로젝트 디렉토리의 특정 모습을 하나의 버전으로 남기는 행위&결과물								staging area의 현 상태를 그대로 하나의 버전으로 남기는 작업, 또는 그 결과물을 가리키는 말														
+	레포지토리		repository		커밋이 저장되는 곳			(local) repository		로컬							(1) 커밋을 한 사용자 아이디										
+								remote repository		리모트	1.안정성	2.협업가능					(2) 커밋한 날짜, 시간										
+		git															(3) 커밋 메시지										
+			init																								
+	사용자 이름과		config	user.name		git config user.name "codeit"				git config --local user.name "forEllieQueenAnsan"							git config --local core.autocrlf true										
+	이메일 설정			user.email																							
+	커밋할 파일 지정		add			git add . //변경사항이 있는 모든 파일																					
+			rm			git rm filename //staging area에서 파일 제거					git rm -cached filename //staging area에서 파일 제거 및 untracked로 ? Modified로																
+			reset			git reset //git add 취소			git reset HEAD filename //특정 파일 git add 취소																		
+						git reset --hard 커밋아이디_앞_4자리																					
+							HEAD가 과거의 커밋을 가리키게 할 수 있따. Working directory의 내용도 과거 커밋의 모습으로 돌아가게 한다.																				
+						git reset --soft HEAD^			//HEAD 바로 이 전 커밋																		
+						git reset --mixed HEAD~x			//HEAD가 가리키는 커밋보다 x단게 전 커밋																		
+																											
+						git reset --soft 		// working directory는 그대로 두면서 HEAD를 움직일 수 있다.																			
+																											
+	커밋 메세지 남기기		commit			git commit -m "message"																					
+	최신 커밋 수정해서 새로운 커밋					git commit --amend -m "message"																					
+																											
+		working directory		<-->	staging area		<-->	repository																			
+		working tree			index																						
+					cache																						
+																											
+			status																								
+			remote		git remote add origin https://#$%.git																						
+			push		git push -u origin master												echo "# ezLearn" >> README.md										
+				tracking connection: -u(--set-upstream)													git init										
+				//origin에 있는 master 브랜치를 tracking(추적)하는 걸로 설정													git add README.md										
+				origin master 브랜치를 대상으로													git commit -m "first commit"										
+					git push												git branch -M main										
+					git pull	작동											git remote add origin https://github.com/EllieKing9/ezLearn.git							git remote add origin https://github.com/EllieKing9/ezLearn.git			
+				옵션(-u) 설정이 안된 경우																							
+					git push origin master:master			와 같이 매번 기재		//로컬:리모트							git push -u origin main							git branch -M main			
+				//master:master에서 더 먼저 나오는 master는 로컬 레포지토리의 master 브랜치																				git push -u origin main			git push -u origin master
+				//더 뒤에 나오는 master는 리모트 레포지토리의 master 브랜치를 나타낸다																							
+																											
+																											git push -u origin master
+			pull		git pull																						
+																											
+																											
+	원격 레포지토리를 그대로 복제		clone		git clone https://*&^.git																						
+																											
+	커밋 히스토리		log		git log		커밋마다 아이디(커밋해시)를 가지고 있다																				
+					git --no-pager log		git -P log		git -P l							272e											
+					git log --pretty=oneline				git lo																		
+					git --no-pager log --pretty=oneline				git -P lo		HEAD	어떤 커밋 하나를 가리킴															
+												HEAD가 가리키는 커밋에 따라															
+												working directory 구성															
+	reference log		reflog		HEAD가 가리켰던 commit들의 id 확인이 가능하다																						
+																											
+			show		git show 커밋아이디_앞_4자리																						
+																											
+			diff		git diff 커밋아이디_앞_4자리 git diff 커밋아이디_앞_4자리 																						
+																											
+																											
+																											
+			tag		git tag version_name 커밋아이디_앞_4자리																						
+					git tag //모든 태그 조회																						
+					git show tag_name																						
+					git tag -d tag_name																						
+																											
+			branch		git branch branch_name																						
+					git branch -d branch_name //해당하는 브랜치를 삭제																						
+				코드를 관리하는 하나의 흐름				HEAD	어떤 브랜치를 가리키는 존재 -> 포인터																		
+				커밋을 가리키는 존재																							
+					git branch -a //local 및 remote의 모든 브랜치를 확인																						
+																											
+			checkout		git checkout branch_name																						
+					git checkout -b branch_name //브랜치를 만들고 해당 브랜치로 이동																						
+															git checkout premium				git commit		git checkout master			git checkout 9033			
+					git checkout 커밋아이디_앞_4자리																						
+						//특정 커밋을 시작점으로 하는 새로운 브랜치를 만들고 싶을 때 HEAD를 잠시 Detached HEAD 상태로 두는 경우가 많이 있다																					
+																											
+			merge		다른 브랜치에서																						
+					git merge master //현재 브랜치에 마스터 내용이 합쳐진다																						
+					git merge --abort //Conflict가 발생한 경우 -> 머지를 시도하기 이전으로 복귀																						
+				fast-forward merge												>>											
+				3-way merge		// 3-way merge는 base에서 변화가 발생한 것을 우선 채택																					
+																											
+					git merge master -m message																						
+																		fast-forward merge					3-way merge				
+																											
+			push		#2 변경된 파일이 있어서 push를 했지만 거절되는 경우																						
+			pull		#2 git pull를 했지만 merge conflict 가 발생																						
+						충돌이 난 파일을 수정한 후																					
+						git add ..																					
+						git commit ..																					
+						git push 를 수행한다																					
+																											
+			fetch		원격 저장소(remote repository)의 내용을 가져오지만																						
+									merge는 하지 않는다																		
+																											
+					git fetch	//리모트 레포지토리에 있는 브랜치의 내용을 일단 가져와서																					
+					git diff (local)branch_name (remote)origin/branch_name						//살편본 후에 																
+					해결																						
+																											
+																											
+																											
+																											
+						git merge origin/branch_name				//머지하고 싶을 때 사용																	
+						git add filename																					
+						git commit -m ..																					
+						git push																					
+																											
+			blame		git blame file_name																						
+																											
+			revert		git revert 커밋아이디_앞_4자리																						
+					git reset은 로컬에서만 작업했을 경우																						
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+											git push 	X															
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+			rebase		git rebase branch_name			// 브랜치의 베이스를 branch_name으로 재지정																			
+								// 베이스를 다시 지정하다. 커밋을 재배치하다																			
+					conflict가 발생하는 경우																						
+					해당파일 수정 후,																						
+					git add file_name																						
+					git rebase --continue																						
+																											
+																											
+			stash		git stash		// 안전한 콧에 보관하다. 넣어두다.																				
+							// 최근 커밋 이후로 working directory 에서 작업하던 내용을 깃이 따로 보관(Stack)																				
+							하고 다시 최근 커밋의 상태로 초기화																				
+					git stash save "message"																						
+																											
+					git stash list																						
+					git stash apply		// 스택에 있는 내용을 다시 working directory로 가져와서 적용																				
+					git stash apply stash_ID																						
+					git stash pop			// stash 적용과 동시에 삭제																			
+																											
+					git stash drop			// 가장 최근의 stash 삭제																			
+					git stash drop stash_name			// 지정한 stash 삭제																			
+					git stash clear																						
+																											
+			cherry-pick		git cherry-pick 커밋아이디_앞_4자리				// 원하는 작업이 있는 커밋의 내용만 가져올 수 있는 커맨드																		
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
