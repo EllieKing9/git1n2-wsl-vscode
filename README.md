@@ -107,3 +107,22 @@ void main(void) {
    printf(" ★ 이제 터미널에서 MAC iTerm2와 같은 비쥬얼로 JMT 프로그래밍을 할 수 있따.\n");
 }
 ```
+
+리눅스 멀티 설치
+```
+cmd > 
+설치가능 버전 확인 : wsl -l -o     //wsl -l(--list) -o(--online)
+설치 된 리눅스 배포판 확인 : wsl -l -v      //-v(--verbose)
+특정 배포판 설치 : wsl --install -d Ubuntu-16.04    //-d(--distribution)
+특정 배포판 삭제 : wsl --unregister Ubuntu-16.04
+실행 : wsl ~ -d Ubuntu-16.04    //wsl ~(리눅스 홈 경로에서 실행)
+or
+Windows New Terminal
+
+리눅스 버전 확인 : $cat /etc/issue
+
+WSL 기본 리눅스 설정 : >wsl --set-default Ubuntu
+WSL 버전 설정 : >wsl --set-version Ubuntu 1( or 2)
+
+
+```
