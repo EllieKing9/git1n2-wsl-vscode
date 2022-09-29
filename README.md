@@ -126,3 +126,21 @@ WSL 버전 설정 : >wsl --set-version Ubuntu 1( or 2)
 
 
 ```
+
+nameserver 세팅
+```
+1. Netplan 
+   ...
+2. /etc/resolv.conf 수정
+$sudo nano /etc/wsl.conf 
+   [network]
+   generateResolvConf = false //true를 false로
+
+$sudo nano /etc/resolv.conf
+   nameserver 10.1.18.16
+   nameserver 10.1.2.38
+   nameserver 8.8.4.4
+   nameserver 8.8.8.8
+
+   alt+x > y> enter
+```
