@@ -137,10 +137,11 @@ $sudo nano /etc/wsl.conf
    generateResolvConf = false //true를 false로
 
 $sudo nano /etc/resolv.conf
-   nameserver 10.1.18.16
-   nameserver 10.1.2.38
-   nameserver 8.8.4.4
-   nameserver 8.8.8.8
+
+nameserver 10.1.18.16
+nameserver 10.1.2.38
+nameserver 8.8.4.4
+nameserver 8.8.8.8
 
    alt+x > y> enter
 ```
