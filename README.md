@@ -148,13 +148,15 @@ nameserver 8.8.8.8
 
 ---------------------------
 
+```
 $lsb_release -a //리눅스 버전 확인
 $curl -i https://www.google.com //인터넷 연결 확인
 $sudo nano /etc/resolv.conf
  //인터넷 연결이 안돼는 경우
  //generateResolvConf를 false로 바꾸고
  //nameserver 추가
-
+```
+   
 ---------------------------
 
 Visual Studio Code
