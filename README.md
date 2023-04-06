@@ -145,3 +145,25 @@ nameserver 8.8.8.8
 
    alt+x > y> enter
 ```
+
+---------------------------
+
+$lsb_release -a //리눅스 버전 확인
+$curl -i https://www.google.com //인터넷 연결 확인
+$sudo nano /etc/resolv.conf
+ //인터넷 연결이 안돼는 경우
+ //generateResolvConf를 false로 바꾸고
+ //nameserver 추가
+
+---------------------------
+
+Visual Studio Code
+//오랜만에 사용할려고 VSCode를 열었더니
+//리눅스 터미널이 안 보인다.
+//자 extension에서 wsl(Remote-WSL)이 설치되어 있는지 확인.. 물론 되어 있다. 전에 사용 했으니까
+//그럼 VSCode 왼쪽 아래쪽에 원격창열기를 보자. 연결이 안되어 있을 것이다.
+//그렇다면 눌러서 distro를 사용하는 새WSL창 를 클릭해서 설치된 linux 배포판을 선택해 준다
+//새 WSL창 를 클릭해서 열면 기본 디폴드 리눅스 배포판이 선택되어 열린다.
+
+터미널
+//터미널을 편집기 영역으로 옮기거나 패널를 아래쪽으로 변경하여 사용
