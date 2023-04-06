@@ -148,6 +148,7 @@ nameserver 8.8.8.8
 
 ---------------------------
 
+리눅스 사용
 ```
 $lsb_release -a //리눅스 버전 확인
 $curl -i https://www.google.com //인터넷 연결 확인
