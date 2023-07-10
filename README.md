@@ -18,7 +18,11 @@ WSL
 11. VERSION이 1인 경우 2로 업그레이드
 12. [Windows 기능 켜기/끄기]에서 [가상 머신 플랫폼] 설정 
 13. 재시작
-wsl --set-version <distro name> 2
+14. [Windows Terminal]에서 [터미널] 실행하여 [wsl --list --verbose]로 설치된 Linux name과 버젼을 확인
+15. wsl --set-version <distro name> 2 로 버전 변경
+16.
+[Windows 하이퍼바이저 플랫폼]
+[Hyper-V]
 ```
 
 ```
