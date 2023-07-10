@@ -1,7 +1,17 @@
 ★ 이제 터미널에서 JMT 프로그래밍을 할 수 있따
 
 <h6>
-   
+
+WSL
+```
+1. 윈도우즈
+2. store 검색 및 [Mircosoft Store]실행
+3. Windows Terminal 검색 및 다운로드해서 열기
+3. ubuntu 검색 및 원하는 버전 다운로드해서 열기
+4. 설치가 안되는 경우 [Windows 기능 켜기/끄기]에서 Linux용 Windows 하위 시스템 설정 
+5. 재부팅
+```
+
 ```
 #define MAX 256
 
