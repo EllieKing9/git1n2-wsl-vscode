@@ -5,11 +5,20 @@
 WSL
 ```
 1. 윈도우즈
-2. store 검색 및 [Mircosoft Store]실행
-3. Windows Terminal 검색 및 다운로드해서 열기
-3. ubuntu 검색 및 원하는 버전 다운로드해서 열기
-4. 설치가 안되는 경우 [Windows 기능 켜기/끄기]에서 Linux용 Windows 하위 시스템 설정 
+2. [store] 검색 및 [Mircosoft Store]실행
+3. [Windows Terminal] 검색 및 다운로드해서 열기
+3. [ubuntu] 검색 및 원하는 버전 다운로드해서 열기
+4. 설치가 안되는 경우 [Windows 기능 켜기/끄기]에서 [Linux용 Windows 하위 시스템] 설정 
 5. 재부팅
+6. [Mircosoft Store] 실행
+7. [Visual Studio Code] 검색 및 설치
+8. [Visual Studio Code] 실행해서 [WSL] extension 설치
+9. [Windows Terminal]에서 [Ubuntu] 실행해서 code 실행
+10. [Windows Terminal]에서 [터미널] 실행하여 [wsl --list --verbose]로 설치된 Linux name과 버젼을 확인
+11. VERSION이 1인 경우 2로 업그레이드
+12. [Windows 기능 켜기/끄기]에서 [가상 머신 플랫폼] 설정 
+13. 재시작
+
 ```
 
 ```
