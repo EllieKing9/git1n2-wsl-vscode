@@ -18,7 +18,7 @@ WSL
 11. VERSION이 1인 경우 2로 업그레이드
 12. [Windows 기능 켜기/끄기]에서 [가상 머신 플랫폼] 설정 
 13. 재시작
-
+wsl --set-version <distro name> 2
 ```
 
 ```
