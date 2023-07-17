@@ -34,8 +34,8 @@ $git commit --amend -m "message2" : 최신 커밋에 대하여 "message2"로 수
 
 $git branch [name] : 새로운 [name] branch 생성
 $git switch [name] : [name] 브랜치로 작업환경 변경(이동)
-$git brach -d [name] : [name] 브랜치 삭제
-$git brach -a : local 및 remote의 모든 브랜치 확인
+$git branch -d [name] : [name] 브랜치 삭제
+$git branch -a : local 및 remote의 모든 브랜치 확인
 $git branch -m [name] : 현재 브랜치의 이름을 [name]으로 변경
 
 $git checkout [name] : [name] 브랜치로 작업환경 변경(이동)
