@@ -8,6 +8,21 @@ __ git 구조
 	> HEAD : 어떠한 커밋 하나를 가르킴 | HEAD가 가르키는 커밋 내용 그대로 "working directory"가 구성되어 진다
 
 __ git 사용
+
+$git config --local user.name "Myself" // 이름(name) 필수 
+$git config --local user.email "7baetae@hanmail.net" // 이메일(email) 필수
+
+$git config --local core.autocrlf "true"
+$git config --local core.editor "code" //"Visual Studio Code"로 편집이 되도록 
+$git config --local core.editor "code --wait" //열린 파일이 닫힐 때까지 기다린다.
+$git config --local core.pager cat
+
+$git config --local diff.tool vscode
+$git config --local difftool.cmd "code --wait --diff $LOCAL $REMOTE" //[difftool "vscode"]
+
+//$git config --local init.defaultBranch main //$git init 할 때 [master]가 아닌 [main] 브랜치가 기본 브랜치 이름으로 생성
+
+	
 $git init 
 
 $git add [file] 
