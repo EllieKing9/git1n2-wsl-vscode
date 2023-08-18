@@ -18,10 +18,12 @@ $git config --local core.editor "code --wait" //열린 파일이 닫힐 때까�
 $git config --local core.pager cat
 
 $git config --local diff.tool vscode
-$git config --local difftool.cmd "code --wait --diff $LOCAL $REMOTE" //[difftool "vscode"]
+$git config --local difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE" //[difftool "vscode"]
 
 //$git config --local init.defaultBranch main //$git init 할 때 [master]가 아닌 [main] 브랜치가 기본 브랜치 이름으로 생성
 
+$git config --local --list
+$git config --local -e
 	
 $git init 
 
@@ -72,7 +74,7 @@ $git push -u origin master
 		> 트래킹 설정 후 $git pull, $git push 작동
 	> 옵션(-u) 설정이 안된 경우
 		> $git push origin master(local):master(remote) 와 같이 매번 기재해야 함
-
+		//> $git push origin master:stbae/20230817
 	>> Username, Password ==> Username, Token 으로 변경 됨
 		> github.com -> Settings -> Developer settings -> Personal access tokens -> Generate new token -> Generate token
 		""
