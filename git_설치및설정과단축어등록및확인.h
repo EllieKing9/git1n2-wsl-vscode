@@ -19,7 +19,7 @@ $git config --global core.editor "code --wait" //열린 파일이 닫힐 때까�
 $git config --global core.pager cat
 
 $git config --global diff.tool vscode
-$git config --global difftool.cmd "code --wait --diff $LOCAL $REMOTE" //[difftool "vscode"]
+$git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE" //[difftool "vscode"]
 
 $git config --global init.defaultBranch main //$git init 할 때 [master]가 아닌 [main] 브랜치가 기본 브랜치 이름으로 생성
 
