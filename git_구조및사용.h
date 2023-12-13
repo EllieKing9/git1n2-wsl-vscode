@@ -67,8 +67,11 @@ $git merge [name] : 현재 브랜치에 [name] 브랜치의 내용이 합쳐진�
 $git merge [name] -m [message] : 브랜치 병합시에 업데이트된 내용이 있다면 메세지를 넣어준다
 $git merge --abort [name] : Conflict가 발생한 경우ㅠ 머지를 시도하기 이전으로 복귀
 
+$git remote -v
+$git remote remove origin
 $git remote add origin [web_url] 
 	> $git remote add origin "https://github.com/EllieKing9/winsock2.git"
+
 $git push -u origin master
 	> -u(--set-upstream) : tracking connection : origin에 있는 master 브랜치를 tracking 한다는 설정
 		> 트래킹 설정 후 $git pull, $git push 작동
