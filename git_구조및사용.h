@@ -135,3 +135,7 @@ $git chery-pick [커밋ID_앞4자리] :
 
 $touch .gitignore
 $echo "*.log" > .gitignore
+
+
+//Git bash에서 한글 파일명 깨지는 경우
+$git config --global core.quotepath false
