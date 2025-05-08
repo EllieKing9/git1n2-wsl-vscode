@@ -48,7 +48,8 @@ $git revert [커밋ID_앞4자리] : [커밋ID_앞4자리] 이후의 커밋(들)�
 $git commit -m "message" -m "sub message"
 //editor : 첫줄 "message" 한 줄 건너 뛰고 "sub message"
 $git commit --amend -m "message2" : 최신 커밋에 대하여 "message2"로 수정해서 새롭게 커밋
-
+$git commit --amend --no-edit : 누락된 파일 추가 (git add된 파일)
+	
 $git branch [name] : 새로운 [name] branch 생성
 $git switch [name] : [name] 브랜치로 작업환경 변경(이동)
 $git branch -d [name] : [name] 브랜치 삭제
