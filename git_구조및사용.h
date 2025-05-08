@@ -38,13 +38,17 @@ $rm -fr [folder]
 
 $git reset : 최신 add 취소
 $git reset [file] : 특정 [file] 최신 add 취소
-$git reset --soft [커밋ID_앞4자리] : "working" 안바뀜 "staging" 안바뀜 "repository" HEAD 이동
-$git reset --mixed [커밋ID_앞4자리] : "working" 안바뀜 "staging" 바뀜 "repository" HEAD 이동
-$git reset --hard [커밋ID_앞4자리] : "working" 바뀜 "staging" 바뀜 "repository" HEAD 이동 | 과거 커멋의 모습으로
-$git revert [커밋ID_앞4자리] : [커밋ID_앞4자리] 이후의 커밋(들)을 순차적으로 뒤로 돌리면서 하나씩 추가로 더해서 커밋해 줌 
+$git reset --soft [커밋ID_앞4자리] : "working" 안바뀜 "staging" 안바뀜 "repository" HEAD -> [커밋ID_앞4자리] 이동
+$git reset --mixed [커밋ID_앞4자리] : "working" 안바뀜 "staging" 바뀜 "repository" HEAD -> [커밋ID_앞4자리] 이동
+$git reset --hard [커밋ID_앞4자리] : "working" 바뀜 "staging" 바뀜 "repository" HEAD -> [커밋ID_앞4자리] 이동 | 과거 커밋[커밋ID_앞4자리]의 모습으로
+$git revert [커밋ID_앞4자리] : [커밋ID_앞4자리] 이후의 커밋(들)을 순차적으로 뒤로 돌리면서 하나씩 추가로 더해서 커밋해 줌 3
 	> 로컬에서 아직 push를 하지 않았거나 개인적으로 쓰는 브랜치라면 reset를
 	> 공동 작업 환경이면 revert를 사용한다.
 
+$git restore <fine_name> : 특정 파일을 HEAD commit으로 복구
+$git restore --source <commit_id><file_name> : 특정 파일을 특정 commit으로 복구
+$git restore --staged <file_name> : staging area에 있는 특정 파일을 unstaging(untrack)
+	
 $git commit -m "message" -m "sub message"
 //editor : 첫줄 "message" 한 줄 건너 뛰고 "sub message"
 $git commit --amend -m "message2" : 최신 커밋에 대하여 "message2"로 수정해서 새롭게 커밋
@@ -116,17 +120,18 @@ $git fetch : 원격저장소(remote repository)의 최신 이력(내용)를 가�
 $git clone [git 주소] [folder] 
 
 $git stash : 최근 커밋 이후로 "Working directory" 에서 작업하던 내용을 깃이 따로 보관하고 최근 커밋 상태로 만들어 둠
+	브랜치를 옮겨서 보관된 내용을 가져다 사용 가능
 	> $git stash list
 		> stash@{0}: ... : 커밋ID_앞7자리 ...
 		> stash@{1}: ... : 커밋ID_앞7자리 ...
 	> $git stash apply : 가장 최근의 stash를 적용(stash@{0})
-	> $git stash apply [name] : stash [name]를 적용
+	> $git stash apply [name] : stash [name]를 적용 //예로 [name]은 stash@{0}과 같은 이름이다.
 		> "stash 한 브랜치가 아닌 다른 브랜치에서도 적용이 가능"
 	> $git stash apply --index : "staging area" 영역의 상태도 변경시켜 준다.
 	> $git stash drop
 	> $git stash drop [name]
 		> $git stash pop : apply 대신에 pop를 사용하면 drop를 하지 않아도 된다. 
-			> "pop : stash를 적용하고 나서 바로 스택에서 해당 stsh를 제거"
+			> "pop : stash를 적용하고 나서 바로 스택에서 해당 stash를 제거"
 $git stash --keep-index : "staging area"에 들어 있는 파일은 stash 하지 않는다.
 $git stash --include-untracked : "untracked" 내용도 stash 한다.
 $git stash branch [name] : stash 할 당시의 커밋을 Checkout 한 후 새로운 [name] 브랜치를 만들고 여기에 적용하고 stash를 삭제한다.
