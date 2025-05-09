@@ -67,8 +67,8 @@ $git checkout [커밋ID_앞4자리] : 특정 커밋를 시작점으로 하는 �
 	> 이 detached Head 가 가리키는 상태 그대로 브랜치 생성(git checkout -b [name]) 후, 다시 checkout 해서 돌아가 보면 HEAD가 원래대로 최신을 가리키고 있음 
 
 $git merge [name] : 현재 브랜치에 [name] 브랜치의 내용이 합쳐진다
-	> fast-forward merge :
-	> 3-way merge :
+	> fast-forward merge : 부모 브랜치에 변화가 없는 경우
+	> 3-way merge : 부모 브랜치가 변화가 있는 경우
 $git merge [name] -m [message] : 브랜치 병합시에 업데이트된 내용이 있다면 메세지를 넣어준다
 $git merge --abort [name] : Conflict가 발생한 경우ㅠ 머지를 시도하기 이전으로 복귀
 
