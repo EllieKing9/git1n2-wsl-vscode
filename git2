@@ -66,9 +66,17 @@
 																											
 																											
 			tag		git tag version_name 커밋아이디_앞_4자리																						
-					git tag //모든 태그 조회																						
-					git show tag_name																						
-					git tag -d tag_name																						
+					git tag //모든 태그 정보 조회
+					git tag -n //태그 정보 plus 메세지 조회
+					git show <tag_name>
+					git tag -v <tag_name> //특정 태그 상세 조회
+					git tag -d <tag_name> //특정 태그 삭제
+					git checkout -b <branch_name> <tag_name> //특정 태그로 체크아웃
+
+					git tag <tag_name> //최종 커밋에 태그 생성(Lightweight Tag)
+					git tag -a <tag_name> -m "message" //최종 커밋에 메세지와 함께 태그 생성(Annotated Tag)
+					git tag -a <tag_name> <commit_id> -m "message" //특정 커밋에 메세지와 함께 태스 생성
+					git tag -a <tag_name> <branch_name> -m "message" //특정 브랜치에 최종 커밋에 태그 생성
 																											
 			branch		git branch branch_name																						
 					git branch -d branch_name //해당하는 브랜치를 삭제																						
